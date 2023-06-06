@@ -1,0 +1,6 @@
+#!/bin/bash
+python3 -m compileall $PYFILE
+mv __pycache__/* "$PYFILE"c
+chmod u+x $PYFILE'c'
+rm -rf __pycache__
+
