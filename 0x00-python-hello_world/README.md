@@ -11,6 +11,7 @@ Introduction to python. Scripting between bash and python3. Setting up python an
   * [An Informal Introduction to Python](https://docs.python.org/3.4/tutorial/introduction.html)
 * [Learn To Program Youtube Playlist](https://www.youtube.com/playlist?list=PLGLfVvz_LVvTn3cK5e6LjhgGiSeVlIRwt)
 * [PEP8 - Python stylechecker](https://www.python.org/dev/peps/pep-0008/)
+* [Pycodestyle – Style Guide for Python Code](https://pypi.org/project/pycodestyle/)
 * [Installing PEP8 with PIP](https://pep8.readthedocs.io/en/release-1.7.x/intro.html#installation)
 * [Number padding tips](https://pyformat.info/#number_padding)
 * [Python Bytecode](https://docs.python.org/3.4/library/dis.html)
