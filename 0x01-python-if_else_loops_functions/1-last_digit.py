@@ -12,7 +12,8 @@ if number >= 0:
         print("and is less than 6 and not 0")
 else:
     if abs(number) % 10 == 0:
-        print("Last digit of {} is -{} and is 0".format(number, abs(number) % 10))
+        print("Last digit of", end=' ')
+        print("{} is -{} and is 0".format(number, abs(number) % 10))
     else:
-        print("Last digit of {} is -{}".format(number, abs(number) % 10), end=' ')
+        print(f"Last digit of {number} is -{abs(number) % 10}", end=' ')
         print("and is less than 6 and not 0")
