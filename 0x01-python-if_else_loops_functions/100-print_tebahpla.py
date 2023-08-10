@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for char in range(65, 91, 2)[::-1]:
-    print("".join(reversed(chr(char) + chr((char + 1) + 32))), end='')
+print("".join('{}{}'.format(chr((char + 1) + 32), chr(char))
+              for char in range(65, 91, 2)[::-1]), end='')
