@@ -21,7 +21,7 @@ Introduction to python. Scripting between bash and python3. Setting up python an
 
 # Tasks
 
-<h2>Description of Files</h2>
+<h3>Description of Files:</h3>
 
 <h6>0-run</h6>
 A shell script that runs a Python script. The name of the script is stored in the environmental variable $PYFILE
