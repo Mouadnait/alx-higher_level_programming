@@ -4,4 +4,4 @@ def square_matrix_simple(matrix=[]):
     for i in matrix:
         helper = [e * e for e in i]
         square.append(helper)
-    return(square)
+    return (square)
