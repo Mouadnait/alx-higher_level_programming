@@ -9,10 +9,11 @@ class Square:
     Attributes:
         size: size of a square (1 side).
     """
+
     def __init__(self, size):
         """
         size : no type/value verification
         ----------------------------
         Private instance attribute size
         """
-        self.size = size
+        self.__size = size
