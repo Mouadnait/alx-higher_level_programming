@@ -102,6 +102,5 @@ class Rectangle:
             str: the rectangle
         """
         if self.__width == 0 or self.__height == 0:
-            return 0
-        else:
-            return "\n".join(["#" * self.__width for i in range(self.__height)])
+            return ""
+        return "\n".join(["#" * self.__width for i in range(self.__height)])
