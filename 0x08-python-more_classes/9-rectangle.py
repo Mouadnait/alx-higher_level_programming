@@ -4,7 +4,7 @@
 
 class Rectangle:
     """
-    Class that defines properties of rectangle by: (based on 5-rectangle.py).
+    Class that defines properties of rectangle by: (based on 8-rectangle.py).
 
     Attributes:
         width (int): width of the rectangle.
@@ -21,9 +21,9 @@ class Rectangle:
             width (int, optional): width of rectangle. Defaults to 0.
             height (int, optional): height of rectangle. Defaults to 0.
         """
-        self.height = height
-        self.width = width
         type(self).number_of_instances += 1
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -98,16 +98,39 @@ class Rectangle:
         else:
             return 2 * (self.__height + self.__width)
 
+    @classmethod
+    def square(cls, size=0):
+        """Returns a new rectangle instance with width == height == size.
+
+        Args:
+            cls: used to access class attributes.
+            size (int, optional): size of rectangle (1 side). Defaults to 0.
+
+        Returns:
+            Square: the new rectangle with equal values of height and width .
+        """
+        return Rectangle(size, size)
+
     def __str__(self):
         """Prints the rectangle with the character # .
 
         Returns:
             str: the rectangle
         """
+        rectangle = []
+
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join([str(self.print_symbol) * self.__width
-                          for i in range(self.__height)])
+
+        for i in range(self.__height):
+            for j in range(self.__width):
+                rectangle.append(str(self.print_symbol))
+            rectangle.append("\n")
+
+        # remove blank line
+        rectangle.pop()
+
+        return "".join(rectangle)
 
     def __repr__(self):
         """Returns a string representation of the rectangle.
@@ -117,10 +140,10 @@ class Rectangle:
         """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
-    @classmethod
-    def __del__(cls):
-        """Deletes an instance of a class"""
-        cls.number_of_instances -= 1
+    def __del__(self):
+        """Deletes an instance of a class
+        """
+        type(self).number_of_instances -= 1
         print("{:s}".format("Bye rectangle..."))
 
     @staticmethod
@@ -135,20 +158,16 @@ class Rectangle:
             Rectangle: the rectangle with the biggest area else rect_1 if
             areas are equal
         """
-        if type(rect_1) is not Rectangle or type(rect_2) is not Rectangle:
-            wrong = "rect_1" if type(rect_1) is not Rectangle else "rect_2"
-            raise TypeError(wrong + " must be an instance of Rectangle")
-        return (rect_1 if rect_1.area() >= rect_2.area() else rect_2)
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
 
-    @classmethod
-    def square(cls, size=0):
-        """Returns a new rectangle instance with width == height == size.
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
 
-        Args:
-            cls: used to access class attributes.
-            size (int, optional): size of rectangle (1 side). Defaults to 0.
+        area_1 = rect_1.area()
+        area_2 = rect_2.area()
 
-        Returns:
-            Square: the new rectangle with equal values of height and width .
-        """
-        return cls(size, size)
+        if area_1 >= area_2:
+            return rect_1
+
+        return rect_2
