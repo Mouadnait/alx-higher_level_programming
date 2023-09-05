@@ -114,6 +114,11 @@ class Rectangle:
                 rectangle.append(str(self.print_symbol))
             rectangle.append("\n")
 
+        # remove blank line
+        rectangle.pop()
+
+        return "".join(rectangle)
+
     def __repr__(self):
         """Returns a string representation of the rectangle.
 
@@ -127,7 +132,18 @@ class Rectangle:
         print("{:s}".format("Bye rectangle..."))
         type(self).number_of_instances -= 1
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """Computes the area of two rectangles and compares them.
+
+        Args:
+            rect_1 (Rectangle): first rectangle.
+            rect_2 (Rectangle): second rectangle.
+
+        Returns:
+            Rectangle: the rectangle with the biggest area else rect_1 if
+            areas are equal
+        """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
