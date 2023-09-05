@@ -117,10 +117,11 @@ class Rectangle:
         """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
-    def __del__(self):
+    @classmethod
+    def __del__(cls):
         """Deletes an instance of a class"""
+        cls.number_of_instances -= 1
         print("{:s}".format("Bye rectangle..."))
-        type(self).number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -134,13 +135,10 @@ class Rectangle:
             Rectangle: the rectangle with the biggest area else rect_1 if
             areas are equal
         """
-        if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() >= rect_2.area():
-            return rect_1
-        return rect_2
+        if type(rect_1) is not Rectangle or type(rect_2) is not Rectangle:
+            wrong = "rect_1" if type(rect_1) is not Rectangle else "rect_2"
+            raise TypeError(wrong + " must be an instance of Rectangle")
+        return (rect_1 if rect_1.area() >= rect_2.area() else rect_2)
 
     @classmethod
     def square(cls, size=0):
