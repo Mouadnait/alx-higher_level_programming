@@ -3,7 +3,8 @@
 
 
 def _add(x, y):
-    add = int(x) + int(y) if isinstance(x, float) or isinstance(y, float) else x + y
+    add = int(x) + int(y) if isinstance(x, float)\
+        or isinstance(y, float) else x + y
     return add
 
 
