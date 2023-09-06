@@ -9,12 +9,15 @@ def text_indentation(text):
     """Prints text with added two newlines
     after each of these characters {'.', '?', ':'}.
     """
-    if not isinstance(text, str):
+
+    if type(text) is not str:
         raise TypeError("text must be a string")
 
-    for delimeter in "?:.":
-        words = (delimeter + "\n\n").join(
-                [index.strip(" ") for index in words.split(delimeter)])
+    for delim in ".:?":
+        text = (delim + "\n\n").join(
+            [line.strip(" ") for line in text.split(delim)])
+
+    print("{}".format(text))
 
 if __name__ == "__main__":
     import doctest
