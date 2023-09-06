@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """Defines an integer addition function."""
-add = lambda x, y: int(x) + int(y) if isinstance(x, float)\
-        or isinstance(y, float) else x + y
+
+
+def _add(x, y):
+    add = int(x) + int(y) if isinstance(x, float) or isinstance(y, float) else x + y
+    return add
 
 
 def add_integer(a, b=98):
@@ -22,7 +25,7 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    result = add(a, b)
+    result = _add(a, b)
     return result
 
 
