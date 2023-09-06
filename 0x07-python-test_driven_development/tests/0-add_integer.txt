@@ -70,10 +70,10 @@ String input:
 
 None input:
 
-    >>> add_integer(None)
+    >>> add_integer()
     Traceback (most recent call last):
     ...
-    TypeError: a must be an integer
+    TypeError: add_integer() missing 1 required positional argument: 'a'
 
 Double negative float input:
 
@@ -101,6 +101,16 @@ Casting string to float:
 
     >>> add_integer(10/float("inf"), 6)
     6
+
+    >>> add_integer(float("inf"), 5)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float("nan"), 4)
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
 
 Type of inputs:
 
