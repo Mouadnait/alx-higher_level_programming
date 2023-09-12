@@ -22,9 +22,10 @@ def matrix_divided(matrix, div):
     if not isinstance(matrix, list)\
         or len(matrix) == 0 or not matrix[0]\
         or all(len(row) == 0 for row in matrix)\
-        or not all(isinstance(ele, (int, float)) 
+        or not all(isinstance(ele, (int, float))
                    for row in matrix for ele in row):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists)" +
+                        " of integers/floats")
 
     row_length = len(matrix[0])
     if any(len(row) != row_length for row in matrix):
