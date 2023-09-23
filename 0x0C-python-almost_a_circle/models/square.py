@@ -5,7 +5,6 @@
 from models.rectangle import Rectangle
 
 
-
 class Square(Rectangle):
     """Class that defines properties of Square.
 
@@ -21,20 +20,24 @@ class Square(Rectangle):
 
         Args:
             size (int): The size of the square's sides.
-            x (int, optional): The x-coordinate of the square's position. Defaults to 0.
-            y (int, optional): The y-coordinate of the square's position. Defaults to 0.
-            id (int, optional): The unique identifier for the square. Defaults to None.
+            x (int, optional): The x-coordinate of
+            the square's position. Defaults to 0.
+            y (int, optional): The y-coordinate of
+            the square's position. Defaults to 0.
+            id (int, optional): The unique identifier
+            for the square. Defaults to None.
         """
         super().__init__(size, size, x, y, id)
-        
+
     def __str__(self):
         """Returns a string representation of the Square instance.
 
         Returns:
             str: A string in the format "[Square] (id) x/y - size".
         """
-        return "[{}] ({}) {}/{} - {}".format(type(self).__name__, self.id, self.x, self.y, self.size)
-    
+        return "[{}] ({}) {}/{} - {}".format(
+            type(self).__name__, self.id, self.x, self.y, self.size)
+
     @property
     def size(self):
         """Property retriever for size.
@@ -43,7 +46,7 @@ class Square(Rectangle):
             int: size of one side of square.
         """
         return self.width
-    
+
     @size.setter
     def size(self, value):
         """Setter for size.
@@ -53,7 +56,8 @@ class Square(Rectangle):
 
         Raises:
             TypeError: If the value is not of type int.
-            ValueError: If the value does not meet the specified condition (non-negative or positive).
+            ValueError: If the value does not meet 
+            the specified condition (non-negative or positive).
         """
         self.validation("width", value, False)
         self.width = value
@@ -61,14 +65,16 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """
-        Updates the attributes of the instance based on positional and keyword arguments.
+        Updates the attributes of the instance
+        based on positional and keyword arguments.
 
         Args:
             *args: Variable number of positional arguments.
             **kwargs: Variable number of keyword arguments.
 
         Note:
-            This method allows updating attributes using a combination of both positional and keyword arguments.
+            This method allows updating attributes using a
+            combination of both positional and keyword arguments.
         """
         if args and len(args) > 0:
             attribut_list = ['id', 'size', 'x', 'y']

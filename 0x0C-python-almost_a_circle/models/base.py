@@ -14,9 +14,10 @@ class Base:
         """Initialize a new instance of Base.
 
         Args:
-            id (int, optional): The unique identifier for the object. Defaults to None.
+            id (int, optional): The unique identifier
+            for the object. Defaults to None.
         """
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
@@ -32,7 +33,7 @@ class Base:
         Returns:
             str: jason string representation.
         """
-        if list_dictionaries == None or not list_dictionaries:
+        if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
@@ -75,16 +76,22 @@ class Base:
 
         Args:
             cls (type): The class type to create an instance of.
-            **dictionary (dict): A dictionary containing attribute-value pairs for the instance.
+            **dictionary (dict): A dictionary containing
+            attribute-value pairs for the instance.
 
         Returns:
-            object: An instance of the class with attributes set based on the provided dictionary.
+            object: An instance of the class with
+            attributes set based on the provided dictionary.
 
         Note:
-            This method is used to create an instance of a class (e.g., Rectangle or Square)
-            with its attributes initialized using a dictionary. It first determines the class type,
-            creates a "dummy" instance with default values, and then updates the attributes of the
-            dummy instance with values from the dictionary. The resulting instance is returned.
+            This method is used to create an instance
+            of a class (e.g., Rectangle or Square)
+            with its attributes initialized using a
+            dictionary. It first determines the class type,
+            creates a "dummy" instance with default values,
+            and then updates the attributes of the
+            dummy instance with values from the dictionary.
+            The resulting instance is returned.
         """
         from models.rectangle import Rectangle
         from models.square import Square
@@ -105,5 +112,7 @@ class Base:
         if file_exists is False:
             return "[]"
         else:
-            with open("{}.json".format(cls.__name__), "r", encoding="utf-8") as file:
-                return [cls.create(**dictionary) for dictionary in cls.from_json_string(file.read())]
+            file_name = "{}.json".format(cls.__name__)
+            with open(file_name, "r", encoding="utf-8") as file:
+                return [cls.create(**dictionary)
+                        for dictionary in cls.from_json_string(file.read())]

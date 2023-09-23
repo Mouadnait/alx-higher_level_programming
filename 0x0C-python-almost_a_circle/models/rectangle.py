@@ -14,9 +14,12 @@ class Rectangle(Base):
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
-            x (int, optional): The x-coordinate of the rectangle's position. Defaults to 0.
-            y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
-            id (int, optional): The unique identifier for the rectangle. Defaults to None.
+            x (int, optional): The x-coordinate of
+            the rectangle's position. Defaults to 0.
+            y (int, optional): The y-coordinate of
+            the rectangle's position. Defaults to 0.
+            id (int, optional): The unique identifier
+            for the rectangle. Defaults to None.
         """
         self.width = width
         self.height = height
@@ -104,13 +107,17 @@ class Rectangle(Base):
         """Method for validating an integer value.
 
         Args:
-            name (str): The name of the value being validated, used in error messages.
+            name (str): The name of the value being
+            validated, used in error messages.
             value (int): The value to be validated.
-            eq (bool, optional): Whether the value should be greater than or equal to zero (default) or strictly greater than zero.
+            eq (bool, optional): Whether the value
+            should be greater than or equal to zero
+            (default) or strictly greater than zero.
 
         Raises:
             TypeError: If the value is not of type int.
-            ValueError: If the value does not meet the specified condition (non-negative or positive).
+            ValueError: If the value does not meet
+            the specified condition (non-negative or positive).
 
         """
         if type(value) != int:
@@ -124,7 +131,8 @@ class Rectangle(Base):
         """Calculate the area of the rectangle.
 
         Returns:
-            int: The area of the rectangle, which is the product of its width and height.
+            int: The area of the rectangle,
+            which is the product of its width and height.
         """
         return self.__width * self.__height
 
@@ -133,7 +141,8 @@ class Rectangle(Base):
             print('#' * self.__width)
 
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
 
     def display(self):
         for _ in range(self.__y):
@@ -143,14 +152,16 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        Updates the attributes of the instance based on positional and keyword arguments.
+        Updates the attributes of the instance
+        based on positional and keyword arguments.
 
         Args:
             *args: Variable number of positional arguments.
             **kwargs: Variable number of keyword arguments.
 
         Note:
-            This method allows updating attributes using a combination of both positional and keyword arguments.
+            This method allows updating attributes using a
+            combination of both positional and keyword arguments.
         """
         if args and len(args) > 0:
             attr_list = ["id", "width", "height", "x", "y"]
@@ -166,7 +177,8 @@ class Rectangle(Base):
         """Returns a dictionary representation of the Rectangle instance.
 
         Returns:
-            dict: A dictionary containing the attributes 'id', 'width', 'height', 'x', and 'y'.
+            dict: A dictionary containing the attributes
+            'id', 'width', 'height', 'x', and 'y'.
         """
         return {
             'id': self.id,
