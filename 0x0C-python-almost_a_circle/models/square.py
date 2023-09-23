@@ -56,7 +56,7 @@ class Square(Rectangle):
 
         Raises:
             TypeError: If the value is not of type int.
-            ValueError: If the value does not meet 
+            ValueError: If the value does not meet
             the specified condition (non-negative or positive).
         """
         self.validation("width", value, False)
