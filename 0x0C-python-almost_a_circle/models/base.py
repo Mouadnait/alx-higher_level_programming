@@ -96,3 +96,14 @@ class Base:
             dummy = None
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        import os
+        cwd = os.getcwd()
+        file_exists = os.path.exists('{}/{}.json'.format(cwd, cls.__name__))
+        if file_exists is False:
+            return "[]"
+        else:
+            with open("{}.json".format(cls.__name__), "r", encoding="utf-8") as file:
+                return [cls.create(**dictionary) for dictionary in cls.from_json_string(file.read())]
