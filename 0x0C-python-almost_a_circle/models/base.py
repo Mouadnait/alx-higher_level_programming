@@ -106,6 +106,19 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """Returns a list of instances.
+
+        If the file doesn’t exist, return an empty list.
+        Otherwise, return a list of instances - the type of these instances,
+        depends on cls (current class using this method).
+        You must use the from_json_string and create methods (implemented,
+        previously).
+        Args:
+            cls (any): class.
+
+        Returns:
+            list: list of instances.
+        """
         import os
         cwd = os.getcwd()
         file_exists = os.path.exists('{}/{}.json'.format(cwd, cls.__name__))
