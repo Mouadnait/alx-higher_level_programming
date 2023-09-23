@@ -133,7 +133,6 @@ class Base:
                 return [cls.create(**dictionary)
                         for dictionary in cls.from_json_string(file.read())]
 
-
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """save ti file csv"""
