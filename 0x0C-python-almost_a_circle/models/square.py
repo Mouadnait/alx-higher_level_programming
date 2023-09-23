@@ -35,8 +35,8 @@ class Square(Rectangle):
         Returns:
             str: A string in the format "[Square] (id) x/y - size".
         """
-        return "[{}] ({}) {}/{} - {}".format(
-            type(self).__name__, self.id, self.x, self.y, self.size)
+        return "[Square] ({}) {}/{} - {}".format(
+            self.id, self.x, self.y, self.size)
 
     @property
     def size(self):
