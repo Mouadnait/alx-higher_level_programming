@@ -2,6 +2,25 @@
 
 ![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/272/rtcwz.jpg)
 
+## Setup
+1. Install sql ``sudo apt-get install mysql-server``
+2. Connect to your MySQL server
+  1. ``~> mysql -hlocalhost -uroot -p``
+  2. ``mysql> quit``
+  3. ``Bye``
+
+## New commands / functions used:
+``mysql> help``, ``DDL``, ``DML``, ``CREATE``, ``ALTER``, ``SELECT``, ``INSERT``, ``UPDATE``, ``DELETE``
+
+## Helpful Links
+* [Youtube primer on MySQL](https://www.youtube.com/watch?v=FR4QIeZaPeM)
+* [Basic MySQL tutorial](https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial)
+* [Basic SQL Statements: DDL and DML](http://www.tomjewett.com/dbdesign/dbdesign.php?page=ddldml.php)
+* [Basic SQL Queries: SQL and RA](http://www.tomjewett.com/dbdesign/dbdesign.php?page=queries.php)
+* [SQL Technique: functions](http://www.tomjewett.com/dbdesign/dbdesign.php?page=functions.php)
+* [SQL Technique: subqueries](http://www.tomjewett.com/dbdesign/dbdesign.php?page=subqueries.php)
+* [Resource for SQL information: dev.mysql.com](https://dev.mysql.com/doc/refman/5.7/en/sql-syntax.html)
+
 ##  Requirements
 
 ### Python Scripts
