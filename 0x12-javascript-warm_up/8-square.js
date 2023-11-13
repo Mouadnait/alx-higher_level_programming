@@ -1,14 +1,11 @@
 #!/usr/bin/node
-const firstArgument = process.argv[2];
-const number = parseInt(firstArgument);
-if (!isNaN(number)) {
-    for (let i = 0; i < number; i++) {
-        let row = '';
-        for (let j = 0; j < number; j++){
-            row += 'X';
-        }
-        console.log(row);
-    }
+let i = 0;
+const number = Number(process.argv[2]);
+if (number) {
+  while (i < number) {
+    console.log(Array(number + 1).join('X'));
+    i++;
+  }
 } else {
-    console.log('Missing size');
+  console.log('Missing size');
 }
