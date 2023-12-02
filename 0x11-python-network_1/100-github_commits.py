@@ -13,7 +13,8 @@ import sys
 if __name__ == "__main__":
     repository_name = sys.argv[1]
     owner_name = sys.argv[2]
-    url = f"https://api.github.com/repos/{owner_name}/{repository_name}/commits"
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+        repository_name, owner_name)
     try:
         response = requests.get(url)
         commits = response.json()
