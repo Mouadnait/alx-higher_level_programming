@@ -7,8 +7,8 @@ const file = process.argv[2];
 const text = process.argv[3];
 // The content of the file must be written in utf-8
 fs.writeFile(file, text, 'utf-8',
-    function (err) {
-        if (err) {
-            console.log(err);
-        }
-});
+  function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
