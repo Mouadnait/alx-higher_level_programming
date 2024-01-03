@@ -1,12 +1,11 @@
 #!/usr/bin/node
+const process = require('process');
 const fs = require('fs');
 
-// Get the file path from the command line arguments
-const filePath = process.argv[2];
-// Read the file asynchronously with utf-8 encoding
-if (filePath) {
-    fs.readFile(filePath, 'utf-8', function (err, data) {
-        // If an error occurred during the reading, print the error object
-        err ? console.log(err) : console.log(data);
-    });
-}
+// The first argument is the file path
+const file = process.argv[2];
+// The content of the file must be written in utf-8
+fs.readFile(file, 'utf8', function (err, data) {
+    // If an error occurred during the reading, print the error object
+    err ? console.log(err) : console.log(data);
+});
