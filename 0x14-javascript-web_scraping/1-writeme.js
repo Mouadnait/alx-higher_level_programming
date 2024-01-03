@@ -2,8 +2,13 @@
 const fs = require('fs');
 
 // The first argument is the file path
-const filePath = process.argv[2];
+const file = process.argv[2];
 // The second argument is the string to write
-const contentToWrite = process.argv[3];
-// Write to the file asynchronously with utf-8 encoding
-fs.writeFile(filePath, contentToWrite, 'utf-8', (err) => err ? console.log(err) : '');
+const text = process.argv[3];
+// The content of the file must be written in utf-8
+fs.writeFile(file, text, 'utf-8',
+    function (err) {
+        if (err) {
+            console.log(err);
+        }
+});
