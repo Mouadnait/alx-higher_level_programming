@@ -6,6 +6,6 @@ const fs = require('fs');
 const file = process.argv[2];
 // The content of the file must be written in utf-8
 fs.readFile(file, 'utf8', function (err, data) {
-    // If an error occurred during the reading, print the error object
-    err ? console.log(err) : console.log(data);
+  // If an error occurred during the reading, print the error object
+  err ? console.log(err) : console.log(data);
 });
